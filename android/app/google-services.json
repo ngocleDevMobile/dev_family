@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "866368314947",
+    "firebase_url": "https://dev-family-2adb1.firebaseio.com",
+    "project_id": "dev-family-2adb1",
+    "storage_bucket": "dev-family-2adb1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:866368314947:android:1938b3e471acc6b33ffef6",
+        "android_client_info": {
+          "package_name": "com.devsmile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "866368314947-e4scd1425n71l3l87m6dj54rj56pulf6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-1NdXGnLSDlzq9Buk74U2LtK4JIkdENU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "866368314947-e4scd1425n71l3l87m6dj54rj56pulf6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "866368314947-8rrvj677mkfnlrbc2oc6ghtnobkntl4d.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dev.family"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
