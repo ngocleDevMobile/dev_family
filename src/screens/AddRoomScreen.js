@@ -23,21 +23,21 @@ const AddRoomScreen = ({navigation}) => {
           name: roomName,
           latestMessage: {
             text: `You have joined the room ${roomName}.`,
-            createAt: new Date().getTime(),
-          },
+            createdAt: firestore.FieldValue.serverTimestamp(),
+          }
         })
-        .then((docRef) => {
+        .then(docRef => {
           docRef.collection('MESSAGES').add({
             text: `You have joined the room ${roomName}.`,
-            createAt: new Date().getTime(),
-            system: true,
+            createdAt: firestore.FieldValue.serverTimestamp(),
+            system: true
           });
           navigation.navigate('Home');
         });
     }
   }
   return (
-    <View style={StyleSheet.rootContainer}>
+    <View style={styles.rootContainer}>
       <View style={styles.closeButtonContainer}>
         <IconButton
           icon="close-circle"
@@ -46,18 +46,6 @@ const AddRoomScreen = ({navigation}) => {
           onPress={() => navigation.goBack()}
         />
       </View>
-
-      {/* <Title style={styles.title}>Create a new chat room</Title>
-        <TextInput
-          value={roomName}
-          onChangeText={(text) => setRoomName(text)}
-          placeholder="Room name"
-        />
-        <TouchableOpacity onPress={() => handleButtonPress()}>
-          <Text>Create</Text>
-        </TouchableOpacity>  */}
-
-      <View style={styles.innerContainer}>
         <Title style={styles.title}>Create a new chat room</Title>
         <FormInput
           labelName="Room Name"
@@ -72,7 +60,7 @@ const AddRoomScreen = ({navigation}) => {
           onPress={() => handleButtonPress()}
           disabled={roomName.length === 0}
         />
-      </View>
+      {/* </View> */}
     </View>
   );
 };
