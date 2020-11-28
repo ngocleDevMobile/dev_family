@@ -24,13 +24,13 @@ const AddRoomScreen = ({navigation}) => {
           latestMessage: {
             text: `You have joined the room ${roomName}.`,
             createdAt: firestore.FieldValue.serverTimestamp(),
-          }
+          },
         })
-        .then(docRef => {
+        .then((docRef) => {
           docRef.collection('MESSAGES').add({
             text: `You have joined the room ${roomName}.`,
             createdAt: firestore.FieldValue.serverTimestamp(),
-            system: true
+            system: true,
           });
           navigation.navigate('Home');
         });
@@ -46,20 +46,20 @@ const AddRoomScreen = ({navigation}) => {
           onPress={() => navigation.goBack()}
         />
       </View>
-        <Title style={styles.title}>Create a new chat room</Title>
-        <FormInput
-          labelName="Room Name"
-          value={roomName}
-          onChangeText={(text) => setRoomName(text)}
-          clearButtonMode="while-editing"
-        />
-        <FormButton
-          title="Create"
-          modeValue="contained"
-          labelStyle={styles.buttonLabel}
-          onPress={() => handleButtonPress()}
-          disabled={roomName.length === 0}
-        />
+      <Title style={styles.title}>Create a new chat room</Title>
+      <FormInput
+        labelName="Room Name"
+        value={roomName}
+        onChangeText={(text) => setRoomName(text)}
+        clearButtonMode="while-editing"
+      />
+      <FormButton
+        title="Create"
+        modeValue="contained"
+        labelStyle={styles.buttonLabel}
+        onPress={() => handleButtonPress()}
+        disabled={roomName.length === 0}
+      />
       {/* </View> */}
     </View>
   );
